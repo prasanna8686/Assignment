@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+<script src="js/angular-min.js"></script>
+<link rel="stylesheet" href="css/bootstrap-min.css">
+<script src="js/jquery-min.js"></script>
+<script src="js/bootstrap-min.js"></script>
+
+<link rel="stylesheet" href="css/styles.css" >
+</head>
+<style>
+
+</style>
+
+<body ng-app="myApp">
+<div class="container">
+
+<div class="hpart">
+<h2>Magic Recipes</h2>
+
+<div>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search ingredient to find the dishes" title="Type in a name"> <span class="addBtn">Search by Ingredient</span>
+</div>
+ <div  dir-paginate = " x in addet | itemsPerPage:5 ">
+<table id="myTable" width="320" cellpadding="5" ng-controller="myctrl">
+  
+  <tr>
+    <td><a href="images/gingerchampagne.jpg"><p><img src="images/gingerchampagne.jpg" style="width:150px; height:120px" /></a></p></td>
+    <td>
+	<h3 id="mod1">Ginger Champagne</h3>
+	<p>Ingredients:champagne, ginger, ice, vodka<p></td>
+    <td style="height:auto"><p class="description"><b>Description:</b></p><p>Place the ginger strips into a shaker and press to release the flavor. Add the ice cubes and vodka; shake and strain into a champagne glass. Top with champagne.</p></td>
+  </tr>
+  <tr>
+    <td><p><a href="images/Potato-and-Cheese-Frittata.jpg"><img src="images/Potato-and-Cheese-Frittata.jpg" style="width:150px; height:120px" /></a></p></td>
+    <td><h3 id="mod2">Potato and Cheese Frittata</h3><p>Ingredients:champagne, ginger, ice, vodka</p></td>
+    <td style="height:auto"><p class="description"><b>Description:</b></p><p>Preheat the oven to 400 degrees F (200 degrees C).</p>
+<p>Heat oil in a 12 inch skillet over medium-high heat. </p>
+<p>When the skillet is hot, add the potatoes, and fry until crispy and golden, about 15 minutes.Reduce heat to medium, and add onions. </p>
+ </td>
+  </tr>
+  <tr>
+    <td><p><a href="images/eggnog.jpg"><img src="images/eggnog.jpg" /></a></p></td>
+    <td><h3 id="mod3">Eggnog Thumbprints</h3><p>Ingredients: brown sugar, butter, butter, powdered sugar, eggs, flour, nutmeg, rum, salt, vanilla extract, sugar</p></td>
+    <td><p class="description"><b>Description:</b></p><p>Preheat the oven to 350 degrees F (175 degrees C).</p>
+<p>In a medium bowl, cream together 3/4 cup butter, white sugar, and brown sugar until smooth. Beat in egg and vanilla. Combine flour and salt; stir into the creamed mixture by hand to form a soft dough. Roll dough into 1 inch balls, and place balls 2 inches apart on ungreased cookie sheets. Make an indention in the center of each cookie using your finger or thumb.</p>
+
+</td>
+  </tr>
+  <tr>
+    <td><p><a href="images/succporkroast.jpg"><img src="images/succporkroast.jpg" /></a></p></td>
+    <td><h3 id="mod4">Succulent Pork Roast</h3><p>Ingredients":"brown sugar, garlic, pork chops, water</p></td>
+    <td><p class="description"><b>Description:</b><p>Preheat the oven to 350 degrees F (175 degrees C). Rinse and pat dry the pork roast.</p>
+	
+<p class="text2">Cut deep slits all over the roast with a sharp knife to different depths. Press pieces of garlic into the slits. In a small bowl, mix together the water, brown sugar, and the maraschino cherries with their juice. Place the roast in an oven bag, and pour the cherry mixture over. Seal the bag, and place in a roasting pan.</p>
+</td>
+  </tr>
+  <tr>
+    <td><p><a href="images/irish.jpg"><img src="images/irish.jpg" /></a></p></td>
+    <td><h3 id="mod5">Irish Champ</h3><p>Ingredients":"black pepper, butter, green onion, milk, potato, salt</p></td>
+    <td><p class="description"><b>Description:</b><p>Place potatoes into large pot, and fill with enough water to cover. Bring to a boil, and cook until tender, about 20 minutes.</p>
+
+	<p class="text6">Drain well. Return to very low heat and allow the potatoes to dry out for a few minutes. (It helps if you place a clean dish towel over the potatoes to absorb any remaining moisture.)</p>
+</td>
+  </tr>
+  <tr>
+    <td><p><a href="images/choco.jpg"><img src="images/choco.jpg" /></a></p></td>
+    <td><h3 id="mod6">Chocolate-Cherry Thumbprints</h3><p>ingredients":"cocoa powder, baking powder, butter, eggs, flour, oats, salt, sugar, vanilla extract</p></td>
+    <td><p class="description"><b>Description:</b><p>Preheat oven to 350 degrees F (175 degrees C).</p>
+<p>MICROWAVE 1 cup morsels in small, microwave-safe bowl on HIGH (100 percent) power for 1 minute; stir. Microwave at additional 10- to 20-second intervals, stirring until smooth. Combine oats, flour, cocoa, baking powder and salt in medium bowl.</p>
+
+</td>
+  </tr>
+  <tr>
+    <td><a href="images/meanwoman.jpg"><p><img src="images/meanwoman.jpg" /></a></p></td>
+    <td><h3 id="mod7">Mean Woman Pasta</h3><p>Ingredients":"garlic, kalamata olive, olive oil, pepperoncini, seashell pasta, tomato</p></td>
+    <td><p class="description"><b>Description:</b><p>Combine tomatoes, garlic, olives, basil, olive oil, and pepperoncinis. Stir together and allow to marinate as long as you have time for; overnight is best, although it's fine to eat right away too.</p>
+<p>Cook pasta according to the package directions; drain. Toss with sauce and serve.</p></td>
+  </tr>
+  <tr>
+    <td><p><a href="images/hotspice.jpg"><img src="images/hotspice.jpg" /></a></p></td>
+    <td><h3 id="mod8">Hot Spiced Cider</h3><p>Ingredients":"allspice, apple cider, brown sugar, cinnamon, cloves, nutmeg, orange, salt</p></td>
+    <td><p class="description"><b>Description:</b><p>Place filter in coffee basket, and fill with brown sugar, allspice, cloves, cinnamon stick, salt, nutmeg, and orange wedges. Pour apple cider into coffee pot where the water usually goes. Brew, and serve hot.</p></td>
+  </tr>
+  <tr>
+    <td><p><a href="images/Isa.jpg"><img src="images/Isa.jpg" /></a></p></td>
+    <td><h3 id="mod9">Isa's Cola de Mono</h3><p>Ingredients":"cinnamon, cloves, instant coffee, milk, rum, vanilla extract, water, sugar</p></td>
+    <td><p class="description"><b>Description:</b><p>Gently simmer the cloves and cinnamon sticks in water until reduced by half, about 30 minutes. Add 1 cup of milk, and heat to a simmer, then stir in and dissolve the coffee and sugar.</p>
+
+	<p class="text4">Strain the coffee mixture into the remaining cold milk, and discard the cloves and cinnamon sticks. Stir in the vanilla extract and pisco. Store in the refrigerator.</p></td>
+  </tr>
+  <tr>
+    <td><p><a href="images/amy.jpg"><img src="images/amy.jpg" /></a></p></td>
+    <td><h3 id="mod10">Amy's Barbecue Chicken Salad</h3><p>Ingredients":"barbecue sauce, chicken, cilantro, lettuce, ranch dressing, lettuce, tomato</p></td>
+    <td><p class="description"><b>Description:</b></p><p>Preheat the grill for high heat.</p>
+<p>Lightly oil the grill grate. Place chicken on the grill, and cook 6 minutes per side, or until juices run clear. Remove from heat, cool, and slice.</p>
+
+<p class="text5">In a large bowl, mix the red leaf lettuce, green leaf lettuce, tomato, cilantro, corn, and black beans. Top with the grilled chicken slices and French fried onions.</p>
+</td>
+  </tr>
+</table>
+ <dir-pagination-controls 
+          max-size="5" 
+          direction-links="true" 
+          boundary-links="true"> 
+        </dir-pagination-controls>	
+</div>
+</div>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      
+      <div class="modal-content">
+        
+        <div class="modal-body">
+<h3>Recipe by: Genevieve</h3>
+ <p>"Perfect drink for sushi lovers!! </p>
+<p> Use a good quality champagne for best results."</p>
+ </div>
+        <div class="modal-footer" style="background-color:brown!important">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+    
+      
+      <div class="modal-content">
+        
+        <div class="modal-body">
+<h3>Recipe by: DONSSWEETY </h3>
+ <p>"This potato and cheese frittata is great by itself or with some fruit on a Sunday morning."</p>
+
+ </div>
+        <div class="modal-footer" style="background-color:brown!important">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  
+  <div class="modal fade" id="myModal3" role="dialog">
+    <div class="modal-dialog">
+    
+      
+      <div class="modal-content">
+        
+        <div class="modal-body">
+<h3>Recipe by: SHOLLISMD</h3>
+ <p> "Thumbprint cookies with a delicious filling, these are perfect for Christmas. Does not use eggnog, but they have an eggnog taste. You can substitute 1/4 teaspoon rum extract and 1 tablespoon milk for the rum." </p>
+
+ </div>
+        <div class="modal-footer" style="background-color:brown!important">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  
+  <div class="modal fade" id="myModal4" role="dialog">
+    <div class="modal-dialog">
+    
+      
+      <div class="modal-content">
+        
+        <div class="modal-body">
+<h3>Recipe by: JoyLee</h3>
+ <p>"Bone in Pork roast with brown sugar and maraschino cherries. Garlic adds just the right twist. This comes out tender and juicy. Cooking in a oven bag its easy and quick to clean up. 'Pig out!' Hope you enjoy it." </p>
+
+ </div>
+        <div class="modal-footer" style="background-color:brown!important">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+
+  <div class="modal fade" id="myModal5" role="dialog">
+    <div class="modal-dialog">
+    
+      
+      <div class="modal-content">
+        
+        <div class="modal-body">
+<h3>Recipe by: Ita </h3>
+ <p>"Looks similar to colcannon, but champ is native to the North of Ireland. It's made by blending scallions or green onions with creamy mashed potatoes. Great on its own, served steaming hot with extra butter which will melt through it. But it's also the perfect side dish for good quality sausages." </p>
+
+ </div>
+        <div class="modal-footer" style="background-color:brown!important">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  
+  <div class="modal fade" id="myModal6" role="dialog">
+    <div class="modal-dialog">
+    
+      
+      <div class="modal-content">
+        
+        <div class="modal-body">
+<h3>Recipe by: Nestle® Toll House® </h3>
+ <p>"As pretty as they are delicious, you add your mark to these chocolate cookies by indenting them with your thumb and placing a cherry on top."</p>
+
+ </div>
+        <div class="modal-footer" style="background-color:brown!important">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  
+  <div class="modal fade" id="myModal7" role="dialog">
+    <div class="modal-dialog">
+    
+      
+      <div class="modal-content">
+        
+        <div class="modal-body">
+<h3>Recipe by: SNOWCROFT </h3>
+ <p>"A standard in our home, this one is simple to make and gets better with time." </p>
+
+ </div>
+        <div class="modal-footer" style="background-color:brown!important">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  
+  
+  <div class="modal fade" id="myModal8" role="dialog">
+    <div class="modal-dialog">
+    
+      
+      <div class="modal-content">
+        
+        <div class="modal-body">
+<h3>Recipe by: Sara </h3>
+ <p>"This recipe uses an automatic coffee maker to brew the cider. If you don't own one, heat it in a slow cooker or a saucepan over medium heat on the stovetop. </p>
+<p> Grab your mugs and dive into this hot drink! Clean your coffee maker according to the manufacturer's instructions before using for coffee again."</p>
+ </div>
+        <div class="modal-footer" style="background-color:brown!important">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  
+  
+  
+  <div class="modal fade" id="myModal9" role="dialog">
+    <div class="modal-dialog">
+    
+      
+      <div class="modal-content">
+        
+        <div class="modal-body">
+<h3>Recipe by: Wonder Wanda</h3>
+ <p>"This is a traditional Chilean Christmastime drink of milk flavored with coffee and spices, passed down to me by our Chilean nanny Isa."  </p>
+<p> "It is delicious, and a must-try if you don't care for egg-nog. The recipe can be varied to suit your tastes - be creative with the proportions of coffee, cinnamon, cloves, and vanilla, as well as with your choice of liqueurs."</p>
+ </div>
+        <div class="modal-footer" style="background-color:brown!important">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  
+  
+  <div class="modal fade" id="myModal10" role="dialog">
+    <div class="modal-dialog">
+    
+      
+      <div class="modal-content">
+        
+        <div class="modal-body">
+<h3>Recipe by: AMYEH</h3>
+ <p>"This is very similar to a salad at a popular restaurant near my house. I loved it there and decided to make it at home. </p>
+<p> It's one of my favorite salads to make now!"</p>
+ </div>
+        <div class="modal-footer" style="background-color:brown!important">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</body>
+
+
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > - 1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+<script>
+$(document).ready(function(){
+    $("#mod1").click(function(){
+        $("#myModal").modal();
+    });
+});
+</script>
+<script>
+$(document).ready(function(){
+    $("#mod2").click(function(){
+        $("#myModal2").modal();
+    });
+});
+</script>
+
+<script>
+$(document).ready(function(){
+    $("#mod3").click(function(){
+        $("#myModal3").modal();
+    });
+});
+</script>
+<script>
+$(document).ready(function(){
+    $("#mod4").click(function(){
+        $("#myModal4").modal();
+    });
+});
+</script>
+
+<script>
+$(document).ready(function(){
+    $("#mod5").click(function(){
+        $("#myModal5").modal();
+    });
+});
+</script>
+<script>
+$(document).ready(function(){
+    $("#mod6").click(function(){
+        $("#myModal6").modal();
+    });
+});
+</script>
+
+<script>
+$(document).ready(function(){
+    $("#mod7").click(function(){
+        $("#myModal7").modal();
+    });
+});
+</script>
+<script>
+$(document).ready(function(){
+    $("#mod8").click(function(){
+        $("#myModal8").modal();
+    });
+});
+</script>
+
+<script>
+$(document).ready(function(){
+    $("#mod9").click(function(){
+        $("#myModal9").modal();
+    });
+});
+</script>
+<script>
+$(document).ready(function(){
+    $("#mod10").click(function(){
+        $("#myModal10").modal();
+    });
+});
+</script>
+
+
+</html>
